@@ -2,13 +2,51 @@ body{
   font-family: 'Raleway', sans-serif;
 }
 .Outfit{
-  height: 300px;
+  height: 250px;
+  width: 200px;
+  border: 5px solid #fff;
+  border-radius: 11px;
+  position: relative;
 }
-#img1:hover{
-  opacity: 0.7;
+.ImgFiltrada{
+  display: inline-block;
+  margin: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background-color: #fff;
+  position: relative;
+}
+.Mask {
+  opacity: 0;
+  background-color: rgba(103, 58, 183, 0.26);
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
   cursor: pointer;
-  transform: scale(1.1);
 }
+.ImgFiltrada:hover .Mask {
+	opacity: 1;
+}
+p {
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.2s linear;
+  position: relative;
+  top: 140px;
+  background: crimson;
+  left: 50px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 10px;
+}
+.ImgFiltrada:hover p {
+  opacity: 1;
+  transform: translateY(0px);
+  transition-delay: 0.1s;
+}
+
 .OutfitModal{
   height: 500px;
 }
@@ -19,6 +57,7 @@ body{
   right: 33px;
   text-align: justify;
 }
+
 .Modal{
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -33,10 +72,10 @@ body{
 /* Modal Content */
 .ModalContent {
     background-color: #fefefe;
-    margin: auto;
+    margin: 5% auto 0% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 60%;
     position: relative;
 }
 /* The Close Button */
