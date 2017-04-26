@@ -1,15 +1,17 @@
 body{
   font-family: 'Raleway', sans-serif;
 }
+#GaleriaOutfit{
+  text-align: center;
+}
 .Outfit{
   height: 250px;
   width: 200px;
   border: 5px solid #fff;
   border-radius: 11px;
   position: relative;
-
 }
-.ImgFiltrada{
+.DivOutfit{
   display: inline-block;
   margin: 10px;
   border: 1px solid #ddd;
@@ -26,7 +28,7 @@ body{
   top: 0;
   cursor: pointer;
 }
-.ImgFiltrada:hover .Mask {
+.DivOutfit:hover .Mask {
 	opacity: 1;
 }
 p {
@@ -34,17 +36,17 @@ p {
   opacity: 0;
   transition: all 0.2s linear;
   position: relative;
-  top: 140px;
+  top: 190px;
   background: crimson;
-  left: 80px;
+  left: 50px;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
   padding: 10px;
-
   letter-spacing: 1px;
+  display: inline;
 }
-.ImgFiltrada:hover p {
+.DivOutfit:hover p {
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.1s;
