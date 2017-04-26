@@ -36,11 +36,13 @@ p {
   position: relative;
   top: 140px;
   background: crimson;
-  left: 50px;
+  left: 80px;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
   padding: 10px;
+
+  letter-spacing: 1px;
 }
 .ImgFiltrada:hover p {
   opacity: 1;
