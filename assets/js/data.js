@@ -102,7 +102,7 @@ function CreaGaleriaOutfit(){
     Outfit.className="Outfit";
     Outfit.id= "Outfit" + DataGaleriaOutfit.indexOf(Imagen);
     Outfit.setAttribute("src",directorio);
-    DivMask.className="Mask Outfit";
+    DivMask.className="Mask SobreImg";
     DivMask.id="Mask" + DataGaleriaOutfit.indexOf(Imagen);
     VerOutfit.appendChild(View);
     DivMask.appendChild(VerOutfit);
@@ -114,11 +114,13 @@ function CreaGaleriaOutfit(){
 }
 function AbrirModal(){
   var MaskImages = document.getElementsByClassName("Mask");
+  var Listado = document.getElementsByClassName("Outfit");
+  //console.log(Listado);
   for (var i = 0; i < listaimages.length; i++) {
     MaskImages[i].addEventListener("click",function(){
-    //  var directorio = "assets/images/data/" + Imagen.url;
+      var url = Listado[i];
       document.getElementById("Modal").style.display = "block";
-      document.getElementById("ModalOutfit").src =  this.src;
+      document.getElementById("ModalOutfit").src =  url;
     });
   }
 
