@@ -84,7 +84,11 @@ var DataGaleriaOutfit=[{url:"amarillo_accesorios_bolso.jpg"},
                       {url:"verde_pantalon_short.jpg"},
                       {url:"verde_top_crop.jpg"}];
 
-window.addEventListener('load',CreaGaleriaOutfit);
+window.addEventListener('load',function(){
+  OcultarModal();
+  CreaGaleriaOutfit();
+  AbrirModal();
+});
 function CreaGaleriaOutfit(){
   DataGaleriaOutfit.forEach(function(Imagen){
     var View = document.createTextNode("Ver Outfit");
@@ -108,9 +112,16 @@ function CreaGaleriaOutfit(){
 
   });//cierra forEach
 }
-var MaskImages = document.getElementsByClassName("Mask");
-for (var i = 0; i < MaskImages.length; i++) {
-  MaskImages[i].addEventListener("mouseover",RotateImg(this.id));
+function AbrirModal(){
+  var MaskImages = document.getElementsByClassName("Mask");
+  for (var i = 0; i < listaimages.length; i++) {
+    MaskImages[i].addEventListener("click",function(){
+    //  var directorio = "assets/images/data/" + Imagen.url;
+      document.getElementById("Modal").style.display = "block";
+      document.getElementById("ModalOutfit").src =  this.src;
+    });
+  }
+
 }
 //---------------------
 //Mask1.addEventListener('mouseover',RotateImg);
@@ -122,4 +133,9 @@ function RotateImg(DivImages) {
 function BordeGris(){
   //DivOutfit1.style.border="1px solid #ddd";
   //Outfit1.style.transform="rotateY(360deg)";
+};
+function OcultarModal(){
+  var Modal = document.getElementById("Modal");
+  Modal.style.display="none";
+  //DivOutfit1.style.border="1px solid #ddd";
 };
